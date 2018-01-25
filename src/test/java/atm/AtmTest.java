@@ -58,7 +58,13 @@ public class AtmTest {
 		Assert.assertFalse(check);	
 	}
 	
-	
+	@Test
+	public void shouldDepositMoney() {
+		Atm underTest = new Atm(); 
+		underTest.depositMoney(300.00);   
+		double balance = underTest.getBalance();
+		Assert.assertEquals(800.00, balance, .001);
+	}
 	
 	
 	
