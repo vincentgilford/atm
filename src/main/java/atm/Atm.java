@@ -27,9 +27,9 @@ public class Atm {
 		return enteredPin.equals(requiredPIN);
 	}
 
-	public void depositMoney(double d) {
+	public void depositMoney(int moneyToDeposit) {
 		// TODO Auto-generated method stub
-		balance = 800.00;
+		balance += moneyToDeposit;
 	}
 
 

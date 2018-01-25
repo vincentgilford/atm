@@ -1,5 +1,7 @@
 package atm;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -59,12 +61,21 @@ public class AtmTest {
 	}
 	
 	@Test
-	public void shouldDepositMoney() {
+	public void shouldDepositMoney800() {
 		Atm underTest = new Atm(); 
-		underTest.depositMoney(300.00);   
+		underTest.depositMoney(300);   
 		double balance = underTest.getBalance();
-		Assert.assertEquals(800.00, balance, .001);
+		Assert.assertEquals(800, balance, .001);
 	}
+	
+	@Test
+	public void shouldDespoitMoney700() {
+		Atm underTest = new Atm();
+		underTest.depositMoney(700);
+		double balance = underTest.getBalance(); 
+		Assert.assertEquals(1200, balance, .001);
+	}
+	
 	
 	
 	
