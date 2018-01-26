@@ -1,11 +1,13 @@
 package atm;
+import java.math.*; 
 
 public class Atm {
-	private double balance; 
+	private double amountInAtm;
+	private BigDecimal balance = new BigDecimal(amountInAtm); 
 	private String requiredPIN = "1234";  
 	
 	
-	public double getBalance() {
+	public BigDecimal getBalance() {
 		return balance;
 	}
 	
@@ -15,12 +17,15 @@ public class Atm {
 	}
 	
 	public Atm(double amount) {
-		balance = amount; // TODO Auto-generated constructor stub
+		amountInAtm = amount; // TODO Auto-generated constructor stub
 	}
 
 	public void withDraw(int amountToWithdraw) {
 		// TODO Auto-generated method stub
-		balance -= amountToWithdraw;
+		if(amountToWithdraw<amountInAtm) {
+			System.out.println("Withdrawal exceeds current balance");
+		}
+		amountInAtm -= amountToWithdraw;
 	}
 
 	public boolean allowAccess(String enteredPin) {
@@ -29,7 +34,11 @@ public class Atm {
 
 	public void depositMoney(int moneyToDeposit) {
 		// TODO Auto-generated method stub
-		balance += moneyToDeposit;
+		if(moneyToDeposit<0) {
+			System.out.println("Please enter a postive amount. Thank you");
+		}
+		
+		amountInAtm += moneyToDeposit;
 	}
 
 

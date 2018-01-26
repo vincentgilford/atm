@@ -51,8 +51,7 @@ public class AtmApp {
 				System.out.println("Your Balance is: " + myAccount.getBalance());	
 			}
 			
-			
-			
+						
 			System.out.println("Choose an option.");
 			System.out.println("Press 1 to deposit funds.");
 			System.out.println("Press 2 to withdrawal funds.");
